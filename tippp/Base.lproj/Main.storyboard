@@ -128,12 +128,16 @@
                                 </segments>
                                 <connections>
                                     <action selector="onEditingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ko2-lK-9Pe"/>
+                                    <action selector="tipSelected:" destination="1fe-Qj-bLg" eventType="valueChanged" id="7EV-gN-zbd"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fty-yX-htK"/>
+                    <connections>
+                        <outlet property="tipControl" destination="t5Q-O1-7NC" id="MOX-og-oAx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYD-De-KQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

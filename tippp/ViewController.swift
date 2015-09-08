@@ -21,6 +21,13 @@ class ViewController: UIViewController {
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         billField.text = "0"
+        
+        // Load defaults
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var defaultTip = defaults.integerForKey("tipAmountIndex")
+        if (defaultTip >= 0) {
+            tipControl.selectedSegmentIndex = defaultTip
+        }
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
