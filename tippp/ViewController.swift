@@ -24,7 +24,13 @@ class ViewController: UIViewController {
         totalLabel.text = "$0.00"
         billField.text = ""
         
-        billField.becomeFirstResponder()
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var lastActive = defaults.objectForKey("lastActive") as! NSDate!
+        var elapsed = NSDate().timeIntervalSinceDate(lastActive)
+        if (elapsed < 60) {
+            println(defaults.stringForKey("billValue"))
+            billField.text = defaults.stringForKey("billValue")
+        }
         
     }
     
@@ -34,12 +40,6 @@ class ViewController: UIViewController {
         var defaultTip = defaults.integerForKey("tipAmountIndex")
         if (defaultTip >= 0) {
             tipControl.selectedSegmentIndex = defaultTip
-        }
-        var lastActive = defaults.objectForKey("lastActive") as! NSDate!
-        var elapsed = NSDate().timeIntervalSinceDate(lastActive)
-        if (elapsed < 600) {
-            println(defaults.stringForKey("billValue"))
-            billField.text = defaults.stringForKey("billValue")
         }
         
         updateValues()
@@ -54,6 +54,8 @@ class ViewController: UIViewController {
         var total = billAmount + tip
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        
+        billField.becomeFirstResponder()
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
