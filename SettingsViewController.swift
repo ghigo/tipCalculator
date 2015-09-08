@@ -33,10 +33,14 @@ class SettingsViewController: UIViewController {
     @IBAction func tipSelected(sender: AnyObject) {
         var defaults = NSUserDefaults.standardUserDefaults()
         defaults.setInteger(tipControl.selectedSegmentIndex, forKey: "tipAmountIndex")
-//        defaults.setInteger(123, forKey: "another_key_that_you_choose")
         defaults.synchronize()
+    
     }
 
+    @IBAction func unwindSettings(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

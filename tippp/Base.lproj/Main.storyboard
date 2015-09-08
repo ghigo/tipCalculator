@@ -83,7 +83,7 @@
                     <navigationItem key="navigationItem" title="Tipp" id="tCZ-05-fe2" userLabel="Tipp navigation">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="yu7-MS-cVW">
                             <connections>
-                                <segue destination="1fe-Qj-bLg" kind="push" id="cKo-cS-hzX"/>
+                                <segue destination="q5b-pz-da4" kind="modal" identifier="settingsSegue" modalTransitionStyle="flipHorizontal" id="cKo-cS-hzX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -103,7 +103,7 @@
             </objects>
             <point key="canvasLocation" x="693" y="510"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="vvC-bf-u2p">
             <objects>
                 <viewController id="1fe-Qj-bLg" customClass="SettingsViewController" customModule="tippp" customModuleProvider="target" sceneMemberID="viewController">
@@ -134,14 +134,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Fty-yX-htK"/>
+                    <navigationItem key="navigationItem" title="Settings" id="Fty-yX-htK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="CbK-H9-ZKO">
+                            <connections>
+                                <action selector="unwindSettings:" destination="1fe-Qj-bLg" id="coe-OT-ioj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tipControl" destination="t5Q-O1-7NC" id="MOX-og-oAx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XYD-De-KQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1091" y="510"/>
+            <point key="canvasLocation" x="1479" y="510"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a3Z-kP-Ffz">
@@ -160,6 +166,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oFT-AO-2Cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="161" y="510"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NBy-5a-9jO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q5b-pz-da4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Uh-bd-rvb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1fe-Qj-bLg" kind="relationship" relationship="rootViewController" id="P01-BS-2JP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TRQ-bY-SLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1091" y="510"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
