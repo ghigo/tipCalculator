@@ -18,11 +18,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"onApplicationWillResignActive", name:UIApplicationWillResignActiveNotification, object: nil)
+        
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         billField.text = ""
         
         billField.becomeFirstResponder()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -31,6 +34,12 @@ class ViewController: UIViewController {
         var defaultTip = defaults.integerForKey("tipAmountIndex")
         if (defaultTip >= 0) {
             tipControl.selectedSegmentIndex = defaultTip
+        }
+        var lastActive = defaults.objectForKey("lastActive") as! NSDate!
+        var elapsed = NSDate().timeIntervalSinceDate(lastActive)
+        if (elapsed < 600) {
+            println(defaults.stringForKey("billValue"))
+            billField.text = defaults.stringForKey("billValue")
         }
         
         updateValues()
@@ -58,6 +67,21 @@ class ViewController: UIViewController {
 
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
+    }
+    
+    func onApplicationWillResignActive() {
+        var now = NSDate()
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var bill = NSString(string: billField.text).doubleValue
+        println(bill)
+        defaults.setObject(NSString(string: billField.text), forKey:"billValue")
+        defaults.setObject(now, forKey:"lastActive")
+        defaults.synchronize()
+    }
+    
+    func onApplicationDidBecomeActive() {
+
+        
     }
 
 }
