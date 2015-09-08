@@ -13,6 +13,7 @@
 		FE02651F1B989CFA00801354 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE02651E1B989CFA00801354 /* Images.xcassets */; };
 		FE0265221B989CFA00801354 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE0265201B989CFA00801354 /* LaunchScreen.xib */; };
 		FE02652E1B989CFA00801354 /* tipppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE02652D1B989CFA00801354 /* tipppTests.swift */; };
+		FEE7C8791B9F299D00100FBA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7C8781B9F299D00100FBA /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		FE0265271B989CFA00801354 /* tipppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE02652C1B989CFA00801354 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE02652D1B989CFA00801354 /* tipppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipppTests.swift; sourceTree = "<group>"; };
+		FEE7C8781B9F299D00100FBA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				FE0265171B989CFA00801354 /* AppDelegate.swift */,
+				FEE7C8781B9F299D00100FBA /* SettingsViewController.swift */,
 				FE0265191B989CFA00801354 /* ViewController.swift */,
 				FE02651B1B989CFA00801354 /* Main.storyboard */,
 				FE02651E1B989CFA00801354 /* Images.xcassets */,
@@ -214,6 +217,7 @@
 			files = (
 				FE02651A1B989CFA00801354 /* ViewController.swift in Sources */,
 				FE0265181B989CFA00801354 /* AppDelegate.swift in Sources */,
+				FEE7C8791B9F299D00100FBA /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +415,7 @@
 				FE0265331B989CFA00801354 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FE0265341B989CFA00801354 /* Build configuration list for PBXNativeTarget "tipppTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				FE0265361B989CFA00801354 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
